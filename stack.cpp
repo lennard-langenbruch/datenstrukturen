@@ -8,9 +8,7 @@
 *
 * class Stack
 *
-* Meine Implementation eines Stack.
-*
-* @author LL
+* Meine Implementation eines Stapelspeichers.
 *
 **/
 class Stack
@@ -22,19 +20,7 @@ class Stack
     int next;
 
     public:
-
-    /**
-    *
-    * Konstruktor mit Parameter
-    *
-    * @param capacity: Kapazität des zu erstellenden Stacks.
-    *
-    * Beschreibung:
-    * Übergibt die größe des Stack an "capacity".
-    * Setzt den Zeiger "storage" auf das Schlüsselwort "nullptr".
-    * Setzt "next" gleich 0.
-    *
-    **/
+    
     Stack(int capacity)
     {
         this->capacity = capacity;
@@ -42,27 +28,11 @@ class Stack
         next = 0;
     }
 
-    /**
-    *
-    * Destruktor.
-    *
-    * Beschreibung:
-    * Gibt den vom Stack allokierten Speicher frei.
-    *
-    **/
     ~Stack()
     {
         delete[] storage;
     }
 
-    /**
-    *
-    * Kopierkonstruktor.
-    *
-    * Beschreibung:
-    * Erlaubt das korrekte Kopieren eines Stack.
-    *
-    **/
     Stack(const Stack &copy)
     {
         storage = new int[copy.capacity];
@@ -74,17 +44,6 @@ class Stack
         }
     }
 
-    /**
-    *
-    * Methode.
-    *
-    * Beschreibung:
-    * Wenn der Stapel voll ist wird eine Exception geworfen.
-    * Wenn das Feld zum speichern der Daten noch nicht existiert wird es erstellt.
-    *
-    * Legt ein Objekt vom Typ Integer auf den Stapel.
-    *
-    **/
     void push(int data)
     {
         if(fullStack())
