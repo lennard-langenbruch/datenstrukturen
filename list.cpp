@@ -3,11 +3,6 @@
 
 #include "EmptyListEx.h"
 
-/**
-*
-* Struktur der zu speichernden Daten
-*
-**/
 struct Node
 {
     int data;
@@ -15,15 +10,6 @@ struct Node
     Node *before;
 };
 
-/**
-*
-* class List
-*
-* Meine Implementation einer Doppelt Verketteten Liste
-*
-* @ LL
-*
-**/
 class List
 {
     
@@ -34,44 +20,15 @@ private:
 
 public:
     
-    /**
-    *
-    * Konstruktor.
-    *
-    * Beschreibung:
-    * Initialisiert "head" und "tail" als nullptr.
-    *
-    **/
     List()
     {
         head = tail = nullptr;
     }
-    /**
-    *
-    * Destruktor.
-    *
-    * Beschreibung:
-    * Gibt den von den Elementen (Typ "Node") reservierten Speicher frei.
-    *
-    **/
-    
+
     ~List()
     {
         remove_all();
     }
-    /**
-    *
-    * Methode.
-    *
-    * @param value: Wert nachdem in der Liste gesucht werden soll.
-    * @return check: Boolean der nur "true" ist, wenn die Liste ein Element mit dem übergebenen Wert "append" hält.
-    *
-    *
-    * Beschreibung:
-    * Läuft über die Liste vom Anfang bis zum Ende und überprüft, ob der übergebene Wert in der Liste enthalten ist.
-    * Gibt "true" zurück wenn der Wert in der Liste enthalten ist.
-    *
-    **/
     
     bool contains(int value)
     {
@@ -90,18 +47,6 @@ public:
         return check;
     }
     
-    /**
-    *
-    * Methode.
-    *
-    * @param append: Wert der am Ende der Liste angehangen werden soll.
-    * @return Kein Rückgabewert.
-    *
-    * Beschreibung:
-    * Wenn die Liste leer ist wird ein Element erstellt, welches weder Vor- noch Nachgänger besitzt.
-    * Ansonsten wird ein Element am Ende der Liste hinzugefügt..
-    *
-    **/
     void add_last(int append)
     {
         if(head == nullptr)
@@ -127,18 +72,6 @@ public:
         }
     }
     
-    /**
-    *
-    * Methode.
-    *
-    * @param append: Wert der am Ende der Liste angehangen werden soll.
-    * @return Kein Rückgabewert.
-    *
-    * Beschreibung:
-    * Wenn die Liste leer ist wird ein Element erstellt, welches weder Vor- noch Nachgänger besitzt.
-    * Ansonsten wird ein Element am Anfang der Liste hinzugefügt..
-    *
-    **/
     void add_first(int append) {
 
         if(head == nullptr)
@@ -164,18 +97,6 @@ public:
         }
     }
     
-    /**
-    *
-    * Methode.
-    *
-    * @param Keine Parameter.
-    * @return Kein Rückgabewert.
-    *
-    * Beschreibung:
-    * Wenn die Liste leer ist wird eine Exception vom Typ "EmptyListEx" geworfen.
-    * Ansonten wird das Element am Ende der Liste entfernt.
-    *
-    **/
     void remove_last()
     {
         if(head == nullptr)
@@ -193,18 +114,6 @@ public:
         tail = temp;
     }
     
-    /**
-    *
-    * Methode.
-    *
-    * @param Keine Parameter.
-    * @return Kein Rückgabewert.
-    *
-    * Beschreibung:
-    * Wenn die Liste leer ist wird eine Exception vom Typ "EmptyListEx" geworfen.
-    * Ansonten wird das Element am Anfang der Liste entfernt.
-    *
-    **/
     void remove_first()
     {
         if(head == nullptr)
@@ -223,17 +132,6 @@ public:
         head = temp;
     }
     
-    /**
-    *
-    * Methode.
-    *
-    * @param Keine Parameter.
-    * @return Kein Rückgabewert.
-    *
-    * Beschreibung:
-    * Jedes Element der Liste wird entfernt.
-    *
-    **/
     void remove_all()
     {
         Node *temp = head;
