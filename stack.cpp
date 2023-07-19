@@ -6,9 +6,7 @@
 
 /**
 *
-* class Stack
-*
-* Meine Implementation eines Stapelspeichers.
+* Implementation Stack / Stapelspeichers.
 *
 **/
 class Stack
